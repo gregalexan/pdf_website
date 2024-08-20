@@ -1,0 +1,279 @@
+* {
+    --background-color: #BEC6A0;
+    --navbar-background-color: #708871;
+    --secondary-color: #FEF3E2;
+    --accent-color: #F1C40F;
+    --text-color: #606676;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body, html {
+    height: 100%;
+    background-color: var(--background-color);
+}
+/* Utility */
+.container-lg {
+    max-width: 2500px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+/* Navbar Styles */
+.nav {
+    width: 100%;
+    padding: 30px;
+    z-index: 1000;
+    background-color: var(--navbar-background-color);
+}
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav .container .logo img {
+    max-height: 100px;
+    width: auto; /* Maintain aspect ratio */
+}
+.nav .menu .ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav .container .logo {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.nav ul li a {
+    margin-right: 10px;
+}
+.nav ul li:last-child a {
+    margin-left: 10px;
+
+}
+.all-analysis-btn {
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: 0.5s;
+}
+.all-analysis-btn:hover {
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    opacity: 0.8;
+}
+.hero {
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.hero-mobile {
+    display: none;
+}
+.hero h1 {
+    border-radius: 15px;
+    background-color: var(--background-color);
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px 20px;
+}
+.hero h1 .fas.fa-calendar-check {
+    font-size: xx-large;
+}
+.hero-container {
+    display: grid;
+    grid-template-columns: 75% 75%;
+    justify-content: center;
+    padding: 30px 25px;
+    box-shadow: rgba(0,0,0,.1);
+}
+.hero-contact {
+    margin: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 50px 50px;
+    outline: 3px dashed var(--accent-color);
+    outline-offset: -30px;
+    text-align: center;
+}
+.hero-contact .h3 .far.fa-envelope {
+    font-size: x-large;
+}
+.hero-contact h3 {
+    margin-bottom: 10px;
+}
+.hero-contact ul {
+    padding: 5px;
+}
+.hero-contact ul li {
+    line-height: 2.5;
+    display: flex;
+    flex-wrap: wrap;
+}
+.hero-contact a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+.hero-contact a:hover {
+    color: var(--accent-color)
+}
+.hero-contact i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+.hero-pdf {
+    margin: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 50px 50px;
+    outline: 3px dot-dot-dash var(--accent-color);
+    outline-offset: -30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.hero-pdf h2 {
+    text-align: center;
+    padding: 5px;
+    color: var(--text-color);
+}
+.hero-pdf a {
+    padding: 5px;
+    color: var(--text-color);
+    text-align: center;
+}
+.hero-pdf a:hover {
+    color: var(--accent-color)
+}
+.hero-pdf .h3 .far.fa-envelope {
+    font-size: x-large;
+}
+.hero-pdf h3 {
+    margin-bottom: 10px;
+}
+.hero-pdf ul {
+    padding: 5px;
+}
+.hero-pdf ul li {
+    line-height: 2.5;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* All Analysis Page Styling */
+.pdf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 50px 50px;
+    outline: 3px dashed var(--accent-color);
+    outline-offset: -10px;
+}
+.pdf ul {
+    padding: 5px;
+}
+.pdf ul li {
+    line-height: 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+.pagination a {
+    color: #007BFF;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #007BFF;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+.pagination a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+.pagination .active {
+    background-color: #007BFF;
+    color: white;
+}
+.all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+.all-analysis {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+.all-analysis h2 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+/* Footer Styling is inside the html */
+
+@media (max-width: 670px) {
+    .nav {
+        flex-direction: column; /* Stack items in a column */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .nav h1 {
+        text-align: center;
+        margin-bottom: 15px; /* Space between the h1 and the button */
+    }
+
+    .all-analysis-btn {
+        width: 100%; /* Make the button full width */
+        text-align: center; /* Center the text */
+        margin-top: 10px; /* Add some margin to the top */
+    }
+    .hero-desktop {
+        display: none
+    }
+    .hero-mobile {
+        display: block;
+    }
+    .hero-contact i {
+        display: none;
+    }
+    .hero-container {
+        display: block;
+        padding: 15px;
+    }
+}
+@media (max-width: 960px) {
+    /* Booking */
+    .hero-desktop {
+        display: none
+    }
+    .hero-mobile {
+        display: block;
+    }
+    .hero-container {
+        display: block;
+        padding: 15px;
+    }
+}
