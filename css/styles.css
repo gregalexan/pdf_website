@@ -28,7 +28,10 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
     z-index: 1000;
     background-color: var(--navbar-background-color);
 }
@@ -225,7 +228,7 @@ body, html {
 }
 .pagination {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 .pagination a {
     color: var(--navbar-background-color);
@@ -248,7 +251,7 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 175px;
+    margin-top: 250px;
     margin-bottom: 100px;
 }
 .all-analysis {
@@ -270,7 +273,7 @@ body, html {
     width: 100%;
     bottom: 0;
     left: 0;
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: #708871;
     color: #606676;
     text-align: center;
@@ -288,10 +291,23 @@ body, html {
     text-align: center;
 }
 @media (max-width: 670px) {
-    .nav {
+    /*.nav {
         flex-direction: column; /* Stack items in a column */
-        padding: 20px; /* Adjust padding for smaller screens */
+      /*  padding: 20px 20px; /* Adjust padding for smaller screens */
+    /*}*/
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+    .nav .container {
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .nav h1 {
         text-align: center;
         margin-bottom: 15px; /* Space between the h1 and the button */
@@ -370,6 +386,7 @@ body, html {
     }
 }
 @media (max-width: 590px) {
+    
     .hero-desktop {
         display: none;
     }
