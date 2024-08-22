@@ -275,7 +275,14 @@ body, html {
     text-align: center;
 }
 /* Footer Styling is inside the html */
-
+.footer {
+    bottom: 0;
+    left: 0;
+}
+.footer .container {
+    bottom: 0;
+    left: 0;
+}
 @media (max-width: 670px) {
     .nav {
         flex-direction: column; /* Stack items in a column */
