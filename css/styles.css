@@ -192,46 +192,69 @@ body, html {
     flex-wrap: wrap;
 }
 /* All Analysis Page Styling */
-.pdf {
+.all-analysis {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin: 10px;
-    background-color: var(--background-color);
+}
+.pdf {
+    width: 80%;
+    max-width: 100%; /* Optional: Set a max width to prevent it from getting too wide */
+    display: block;
+    text-align: center; /* Center text within the .pdf container */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto; /* Center the container horizontally */
+    background-color: var(--secondary-color);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 50px 50px;
+    padding: 30px;
     outline: 3px dashed var(--accent-color);
     outline-offset: -10px;
 }
+.pdf h2 {
+    padding-bottom: 35px;
+    text-align: center;
+}
 .pdf ul {
     padding: 5px;
+    text-align: lefts; /* Center text inside the ul */
+    list-style-position: inside; /* Optional: Adjust list item positioning */
 }
 .pdf ul li {
-    line-height: 2;
+    line-height: 2.5;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Ensure list items stack vertically */
+    align-items: center; /* Center items horizontally */
+}
+.pdf a {
+    color: var(--text-color);
+    text-decoration: underline;
+    text-align: center;
+}
+.pdf a:hover {
+    color: var(--accent-color);
 }
 .pagination {
     text-align: center;
-    margin-top: 2rem;
+    margin-bottom: 50px;
 }
 .pagination a {
-    color: #007BFF;
+    color: var(--navbar-background-color);
     padding: 8px 16px;
     text-decoration: none;
-    border: 1px solid #007BFF;
+    border: 1px solid var(--accent-color);
     margin: 0 5px;
     border-radius: 4px;
 }
 .pagination a:hover {
-    background-color: #007BFF;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 .pagination .active {
-    background-color: #007BFF;
+    background-color: var(--navbar-background-color);
     color: white;
 }
 .all {
@@ -239,7 +262,7 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 0;
+    margin: 25px;
 }
 .all-analysis {
     align-items: center;
@@ -250,7 +273,6 @@ body, html {
 .all-analysis h2 {
     margin: 0;
     text-align: center;
-    width: 100%;
 }
 /* Footer Styling is inside the html */
 

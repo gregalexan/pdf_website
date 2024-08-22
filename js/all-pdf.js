@@ -60,7 +60,6 @@ function createPaginationElement() {
     return paginationElement;
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
-    loadAllPdfs(1, 10);
+    loadAllPdfs(1, 2);
 });
