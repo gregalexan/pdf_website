@@ -61,5 +61,5 @@ function createPaginationElement() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadAllPdfs(1, 2);
+    loadAllPdfs(1, 10);
 });
