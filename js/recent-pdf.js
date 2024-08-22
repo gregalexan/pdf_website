@@ -6,8 +6,12 @@ const allPdfs = pdfs.length;
 /* Load Recent PDFs for index.html */
 function loadRecentPdfs(numberOfPdfs) {
     const recentPdfs = pdfs.slice(0, numberOfPdfs);
-    const pdfListElement = document.querySelector('.hero-pdf ul'); // Select the <ul> inside .hero-pdf
-
+    const desktopList = document.getElementById('desktop-ul'); // Gets the ul for desktop screens
+    const mobileList = document.getElementById('mobile-ul'); // Gets the ul for mobile screens
+    renderPdfs(recentPdfs, desktopList) // Adding the li element to desktop
+    renderPdfs(recentPdfs, mobileList) // Adding the li element to mobile
+}
+function renderPdfs(recentPdfs, listElement) {
     recentPdfs.forEach(pdf => {
         const listItem = document.createElement('li');
         const link = document.createElement('a');
@@ -15,7 +19,7 @@ function loadRecentPdfs(numberOfPdfs) {
         link.textContent = `${pdf.name.replace(/_/g, ' ').replace('.pdf', '')}`;
         link.setAttribute('download', pdf.name);
         listItem.appendChild(link);
-        pdfListElement.appendChild(listItem);
+        listElement.appendChild(listItem);
     });
 }
 
