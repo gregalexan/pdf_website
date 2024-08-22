@@ -7,10 +7,8 @@ const pdfs = [
     /* The Format is: 
         name: COMPANY - DD_MM_YYYY
     */
-    { name: 'Amazon - 29_07_2024'},
-    { name: 'Salesforce - 12_08_2024'},
-    {name: 'Nvidia - 19_08_2024'},
-    {name: 'Hims and Hers Health - 05_05_2023'},
+    { name: 'Amazon - 27_07_2024'},
+    { name: 'Salesforce - 04_08_2024'},
 
     /* TODO: ADD MORE PDF HERE LIKE THIS  */
 ];
@@ -25,5 +23,6 @@ pdfs.forEach(pdf => {
 pdfs.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 export const getPdfs = () => {
+    console.log(pdfs);
     return pdfs;
 }
