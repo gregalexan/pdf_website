@@ -9,4 +9,5 @@ All you have to do is
 1) Rename the pdf in the format: `Company - Date.pdf`, where Date has the format `DD_MM_YYYY`
 2) Save the PDF in the `pdf` folder
 3) Navigate to `main.js` and update it with the name of the newly added PDF file, following the guidance provided in the comments.
-
+  
+The PDFs are automatically sorted such that the 5 most recent reports are displayed on the `Home Page`. The remaining reports are organized in the same order and shown with pagination on the `All Analysis` page.  
