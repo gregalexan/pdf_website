@@ -24,7 +24,7 @@ body, html {
 }
 /* Navbar Styles */
 .nav {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100%;
@@ -269,7 +269,7 @@ body, html {
 }
 /* Footer Styling is inside the html */
 .footer {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     bottom: 0;
     left: 0;
