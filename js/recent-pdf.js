@@ -2,6 +2,7 @@ import { getPdfs } from "./main.js";
 
 const pdfs = getPdfs()
 const allPdfs = pdfs.length;
+console.log(allPdfs)
 
 /* Load Recent PDFs for index.html */
 function loadRecentPdfs(numberOfPdfs) {

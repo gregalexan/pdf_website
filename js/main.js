@@ -9,6 +9,7 @@ const pdfs = [
     */
     { name: 'Amazon - 27_07_2024'},
     { name: 'Salesforce - 04_07_2024'},
+    { name: 'Booking - 01_10_2024'},
 
     /* TODO: ADD MORE PDF HERE LIKE THIS  */
 ];
