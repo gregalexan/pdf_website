@@ -1,29 +1,26 @@
-/* Javascript File to get dynamically pdf files from "pdf/" and import them in html. */
-/* Index.html will have the recent 5 - 10 pdf max (probably 7). */
-/* All-Analysis.html will have all the pdf folders and I will try to implement Pagination. */
-
-/* Array to hold the list of PDFs */
-const pdfs = [
+/* Array to hold the list of files */
+const files = [
     /* The Format is: 
         name: COMPANY - DD_MM_YYYY
     */
-    { name: 'Amazon - 27_07_2024'},
-    { name: 'Salesforce - 04_07_2024'},
-    { name: 'Booking - 01_10_2024'},
+    { name: 'Amazon - 27_07_2024', type: 'pdf' },
+    { name: 'Salesforce - 04_07_2024', type: 'pdf' },
+    { name: 'Booking - 01_10_2024', type: 'pdf' },
+    { name: 'Hims & Hers - 03_11_2024', type: 'xlsx' }, // New XLSX entry
 
-    /* TODO: ADD MORE PDF HERE LIKE THIS  */
+    /* TODO: ADD MORE FILES HERE LIKE THIS */
 ];
 
-pdfs.forEach(pdf => {
-    const datePart = pdf.name.split('-')[1] // Extracts DD-MM-YYYY format
+files.forEach(file => {
+    const datePart = file.name.split('-')[1]; // Extracts DD-MM-YYYY format
     const [day, month, year] = datePart.split('_');
-    pdf.date = `${year}-${month}-${day.replace(' ','')}` // Converts to YYYY-MM-DD
-})
+    file.date = `${year}-${month}-${day.replace(' ','')}`; // Converts to YYYY-MM-DD
+});
 
-/* Sort PDFs by date (newest first) */
-pdfs.sort((a, b) => new Date(b.date) - new Date(a.date));
+/* Sort files by date (newest first) */
+files.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-export const getPdfs = () => {
-    console.log(pdfs);
-    return pdfs;
+export const getFiles = () => {
+    console.log(files);
+    return files;
 }

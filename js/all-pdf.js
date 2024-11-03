@@ -1,44 +1,38 @@
-/* Get all the pdf files for all analysis.html */
-import { getPdfs } from "./main.js";
+import { getFiles } from "./main.js";
 
-/* Get recent pdfs for index.html */
-const pdfs = getPdfs();
+const files = getFiles();
 
-/* Load all pdfs in the html */
-function loadAllPdfs(page, itemsPerPage) {
+function loadAllFiles(page, itemsPerPage) {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    const paginatedPdfs = pdfs.slice(start, end);
-    const pdfListElement = document.querySelector('.pdf ul');
+    const paginatedFiles = files.slice(start, end);
+    const fileListElement = document.querySelector('.pdf ul');
 
     // Clear the existing list
-    pdfListElement.innerHTML = '';
+    fileListElement.innerHTML = '';
 
-    // Add the PDFs to the list
-    paginatedPdfs.forEach(pdf => {
+    // Add the files to the list
+    paginatedFiles.forEach(file => {
         const listItem = document.createElement('li');
         const link = document.createElement('a');
-        link.href = `pdf/${pdf.name}.pdf`;
-        link.textContent = `${pdf.name.replace(/_/g, ' ').replace('.pdf', '')}`;
-        link.setAttribute('download', pdf.name);
+        link.href = `pdf/${file.name}.${file.type}`; // Adjusted to include type
+        link.textContent = `${file.name.replace(/_/g, ' ').replace(`.${file.type}`, '')}`;
+        link.setAttribute('download', file.name);
         listItem.appendChild(link);
-        pdfListElement.appendChild(listItem);
-        
+        fileListElement.appendChild(listItem);
     });
 
     // Set up pagination
     setupPagination(page, itemsPerPage);
 }
 
-/* Function to set up pagination */
 function setupPagination(currentPage, itemsPerPage) {
-    const totalPages = Math.ceil(pdfs.length / itemsPerPage);
+    const totalPages = Math.ceil(files.length / itemsPerPage);
     const paginationElement = document.getElementById('pagination') || createPaginationElement();
 
     // Clear existing pagination
     paginationElement.innerHTML = '';
 
-    // Add page links
     for (let i = 1; i <= totalPages; i++) {
         const pageLink = document.createElement('a');
         pageLink.href = '#';
@@ -46,13 +40,12 @@ function setupPagination(currentPage, itemsPerPage) {
         pageLink.className = (i === currentPage) ? 'active' : '';
         pageLink.addEventListener('click', (e) => {
             e.preventDefault();
-            loadAllPdfs(i, itemsPerPage);
+            loadAllFiles(i, itemsPerPage);
         });
         paginationElement.appendChild(pageLink);
     }
 }
 
-/* Function to create pagination element if it does not exist */
 function createPaginationElement() {
     const paginationElement = document.createElement('div');
     paginationElement.id = 'pagination';
@@ -61,5 +54,5 @@ function createPaginationElement() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadAllPdfs(1, 10);
+    loadAllFiles(1, 10);
 });

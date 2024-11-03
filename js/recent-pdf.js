@@ -1,35 +1,31 @@
-import { getPdfs } from "./main.js";
+import { getFiles } from "./main.js";
 
-const pdfs = getPdfs()
-const allPdfs = pdfs.length;
-console.log(allPdfs)
+const files = getFiles();
+const allFiles = files.length;
+console.log(allFiles);
 
-/* Load Recent PDFs for index.html */
-function loadRecentPdfs(numberOfPdfs) {
-    const recentPdfs = pdfs.slice(0, numberOfPdfs);
-    const desktopList = document.getElementById('desktop-ul'); // Gets the ul for desktop screens
-    const mobileList = document.getElementById('mobile-ul'); // Gets the ul for mobile screens
-    renderPdfs(recentPdfs, desktopList) // Adding the li element to desktop
-    renderPdfs(recentPdfs, mobileList) // Adding the li element to mobile
+/* Load Recent Files for index.html */
+function loadRecentFiles(numberOfFiles) {
+    const recentFiles = files.slice(0, numberOfFiles);
+    const desktopList = document.getElementById('desktop-ul');
+    const mobileList = document.getElementById('mobile-ul');
+    renderFiles(recentFiles, desktopList);
+    renderFiles(recentFiles, mobileList);
 }
-function renderPdfs(recentPdfs, listElement) {
-    recentPdfs.forEach(pdf => {
+
+function renderFiles(recentFiles, listElement) {
+    recentFiles.forEach(file => {
         const listItem = document.createElement('li');
         const link = document.createElement('a');
-        link.href = `pdf/${pdf.name}.pdf`;
-        link.textContent = `${pdf.name.replace(/_/g, ' ').replace('.pdf', '')}`;
-        link.setAttribute('download', pdf.name);
+        link.href = `pdf/${file.name}.${file.type}`; // Adjusted to include type
+        link.textContent = `${file.name.replace(/_/g, ' ').replace(`.${file.type}`, '')}`;
+        link.setAttribute('download', file.name);
         listItem.appendChild(link);
         listElement.appendChild(listItem);
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    let numberOfPdfs = 0
-    if (allPdfs > 5) { // If there are more pdfs than 5
-        numberOfPdfs = 5 // then show only the 5 most recent
-    } else {
-        numberOfPdfs = allPdfs // if there are up to 5 pdfs show them all
-    }
-    loadRecentPdfs(numberOfPdfs);
+    let numberOfFiles = allFiles > 5 ? 5 : allFiles;
+    loadRecentFiles(numberOfFiles);
 });
