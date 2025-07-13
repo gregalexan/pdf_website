@@ -7,6 +7,8 @@ const files = [
     { name: 'Salesforce - 04_07_2024', type: 'pdf' },
     { name: 'Booking - 01_10_2024', type: 'pdf' },
     { name: 'Hims & Hers - 03_11_2024', type: 'xlsx' }, // New XLSX entry
+    { name: 'Zeta - 13_07_2025', type: 'pdf' },
+    
 
     /* TODO: ADD MORE FILES HERE LIKE THIS */
 ];
